@@ -1,0 +1,28 @@
+<div class="animate__animated animate__fadeIn">
+    <h2>Por Region</h2>
+    <hr>
+    <h5>Seleccione la region</h5>
+
+    <!-- [ngClass]="{
+'btn-primary': region === this.activeRegion,
+'btn-outline-primary': region !== this.activeRegion
+}" -->
+    <div class="row">
+        <div class="col">
+            <button *ngFor="let region of regions" [class]="this.style(region)" (click)=setTerminus(region)>
+                {{ region | titlecase}}
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="isEmpty();" class="alert alert-default">
+        No hay resultados para la busqueda
+    </div>
+
+
+    <div class="row mt-5" *ngIf="countries.length">
+        <div class="col">
+            <app-country-table [countries]="this.countries"></app-country-table>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.flag-icon-middle {
+    width: 30px;
+    height: 30px;
+}
+
+.top-middle {
+    margin-top: 150px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.flag-icon {
+    width: 24px;
+    height: 24px;
+}

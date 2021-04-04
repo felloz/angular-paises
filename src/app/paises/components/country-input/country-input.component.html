@@ -1,0 +1,11 @@
+<form (ngSubmit)="search()" autocomplete="off">
+    <input type="text" name="" id="" [(ngModel)]="this.termino" name="termino" class="form-control" placeholder=""
+        aria-describedby="helpId" (input)="this.keyPressed()" [placeholder]="placeholder">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action" *ngFor="let tooltip of tooltips"
+            [routerLink]="['/country', tooltip.alpha2Code]">
+            {{ tooltip.name }} <img [src]="tooltip.flag" class="flag-icon align-content-end">
+
+        </li>
+    </ul>
+</form>

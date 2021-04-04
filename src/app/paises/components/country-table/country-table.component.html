@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Pais</th>
+            <th>Población</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries" class="animate__animated animate__fadeIn">
+            <td scope="row">{{ country.numericCode }}</td>
+            <td><img [src]="country.flag" [alt]="country.name" class="small-flag"></td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.population | number}}</td>
+            <td><a [routerLink]="['/country', country.alpha2Code]">Ver más...</a></td>
+        </tr>
+    </tbody>
+</table>

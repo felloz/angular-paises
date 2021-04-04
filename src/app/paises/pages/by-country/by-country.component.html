@@ -1,0 +1,24 @@
+<div class="animate__animated animate__fadeIn">
+  <h2>Por País</h2>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <app-country-input (onEnterLuis)="this.setTermino($event)" (onDebounceLuis)="this.tooltips($event)"
+        placeholder="Buscar por pais..." [tooltips]="tooltipResp">
+      </app-country-input>
+    </div>
+  </div>
+
+  <hr>
+
+  <div *ngIf="isEmpty();" class="alert alert-default">
+    No hay resultados para la busqueda: {{ getTermino }}
+    Msg: {{ errorMessage }}
+  </div>
+
+  <div class="row" *ngIf="countries.length">
+    <div class="col">
+      <app-country-table [countries]="countries"></app-country-table>
+    </div>
+  </div>
+</div>

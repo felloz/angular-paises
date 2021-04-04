@@ -19,6 +19,15 @@
     "lib": [
       "es2018",
       "dom"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": false,
+        "ignoreDefinitionFiles": true,
+        "configFile": "../tslint.json",
+        "suppressWhileTypeErrorsPresent": false
+      }
     ]
   },
   "angularCompilerOptions": {

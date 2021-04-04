@@ -1,0 +1,21 @@
+<div class="animate__animated animate__fadeIn">
+    <h2>Por Capital</h2>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <app-country-input (onDebounceLuis)="this.setTerminus($event)" placeholder="Buscar por capital">
+            </app-country-input>
+        </div>
+    </div>
+    <hr>
+
+    <div *ngIf="isEmpty();" class="alert alert-default">
+        No hay resultados para la busqueda
+    </div>
+
+    <div class="row" *ngIf="capitals.length">
+        <div class="col">
+            <app-country-table [countries]="capitals"></app-country-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="animate__animated animate__fadeIn">
+    <div class="container top-middle" *ngIf="!country; else divCountry">
+        <div class="alert alert-info" *ngIf="gotError">
+            Espere por favor...
+        </div>
+    </div>
+
+    <ng-template #divCountry>
+        <h2 *ngIf="country">{{country.name}} <img [src]="country.flag" alt="" srcset="" class="flag-icon-middle"></h2>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <h1>Pais: <small>{{country.name}}</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Bandera</h3>
+                <img [src]="country.flag" alt="" class="img-thumbnail">
+            </div>
+            <div class="col">
+                <h3>Información</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Población:</strong> {{country.population | number}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Capital:</strong> {{country.capital}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Código numérico:</strong> {{country.numericCode}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Código Alpha:</strong> {{country.alpha3Code}}
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <h3>Traducciones</h3>
+        <div class="row">
+            <div class="col">
+                <span *ngFor="let trans of getTranslations" class="badge bg-primary" style="margin-right: 5px;">
+                    {{ trans }}
+                </span><br>
+
+                <!-- <pre>
+                    {{ country | json }}                         
+            </pre> -->
+            </div>
+        </div>
+    </ng-template>
+</div>
